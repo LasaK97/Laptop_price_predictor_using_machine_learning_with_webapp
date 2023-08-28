@@ -43,3 +43,9 @@ Dataset link :- https://www.kaggle.com/datasets/muhammetvarl/laptop-price
 10 models tested and picked the best model using cross validation score.
 Gradient Boosting model picked as the best model.
 
+---
+### Webapp
+Webapp deployed by using streamlit
+
+webapp link :- https://laptoppricepredictorwithwebapp-m2ycthmpwfzcf6mdcudgc3.streamlit.app/
+
