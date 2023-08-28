@@ -2,7 +2,6 @@ import streamlit as st
 import base64
 import pickle
 import numpy as np 
-import joblib
 
 st.set_page_config(page_title= 'Laptop Price Predictor', layout="wide")
 
@@ -40,9 +39,9 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 def prediction(list):
     filename = './model/predictor_model.pkl'
     with open(filename, 'rb') as file:
-         model = joblib.load(file)
+         model = pickle.load(file)
     
-    pred_value = model.predict([list])
+    pred_value = model.predict(list)
     return pred_value
 
 # input fields
@@ -124,8 +123,8 @@ else:
     traverse_list(gpu_list, gpu)
 
     print(feature_list)
-    pred_value = prediction(feature_list)
-    # pred_value = np.round(pred_value[0],2)*221
+    pred_value = prediction([feature_list])
+    pred_value = np.round(pred_value[0],2)
 
     
-    st.write(pred_value)
+    st.write(f"Predicted Price, { pred_value}")
