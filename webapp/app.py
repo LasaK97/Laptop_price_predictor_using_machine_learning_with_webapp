@@ -2,6 +2,7 @@ import streamlit as st
 import base64
 import pickle
 import numpy as np 
+import joblib
 
 st.set_page_config(page_title= 'Laptop Price Predictor', layout="wide")
 
@@ -11,6 +12,7 @@ with open('./webapp/static/style.css') as f:
 st.markdown("<h1 class = 'title'>Laptop Price Predictor</h1>",unsafe_allow_html=True)
 st.markdown("<hr style = 'color:red;'>",unsafe_allow_html=True) 
 
+# set background
 @st.cache_data
 def get_img_as_base64(file):
     with open(file, "rb") as f:
@@ -36,14 +38,14 @@ page_bg_img = f"""
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def prediction(list):
-    filename = './model/predictor_model.pickle'
+    filename = './model/predictor_model.pkl'
     with open(filename, 'rb') as file:
-         model = pickle.load(file)
+         model = joblib.load(file)
     
     pred_value = model.predict([list])
     return pred_value
 
-
+# input fields
 c1, c2 = st.columns(2)
 with c1:
     company_options = ['---','Acer','Apple', 'Asus', 'Dell', 'HP',
