@@ -47,5 +47,6 @@ Gradient Boosting model picked as the best model.
 ### Webapp
 Webapp deployed by using streamlit
 
-webapp link :- https://laptoppricepredictorwithwebapp-m2ycthmpwfzcf6mdcudgc3.streamlit.app/
+![Laptop Price Predictor Webapp](./webapp.png)
 
+webapp link :- https://laptoppricepredictorwithwebapp-m2ycthmpwfzcf6mdcudgc3.streamlit.app/
